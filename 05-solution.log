@@ -1,0 +1,134 @@
+2018-04-27-Tuenti-Challenge$ ./test-05.sh 
+~/Ramon/projects/2018-04-27-Tuenti-Challenge ~/Ramon/projects/2018-04-27-Tuenti-Challenge
+
+Phase TEST
+> 20 cases, max 3 failures
+> Please, provide "TEST" or "SUBMIT"
+> Start!
+GTTACtTTTgAt aaTgcc GTTACtTTTgA CCGtCtCAcc tTcgAGGaTAACA gcc ggaAacgcaatCCg TcgAGGaTAACAaaT
+1,2,3,5,6,8
+> OK, next!
+TTagcgGcCa agtTtgTgAaGac GTCGgctTGac Cgt CGgctTGacAggtTT TTagcgGcCaGT AagcAAAccAgGa tgGttGGaga AggtTTCgt
+1,3,4,5,6,9
+> OK, next!
+TaaG taAcTctCaTc GGaCAtGcAatcGt ataAcTctCaTcg TgacgAgAccCcC gTaaG TgacgAgAccCcCa
+1,2,4,5,6,7
+> OK, next!
+atTtTT GtCgGgTGTATCC tcTCGaGtAtAG aTTatgctaaaGt tTT ACcgCCcccAC CgGgTGTATCCatT aTTatgctaaa
+1,2,4,5,7,8
+> OK, next!
+aGAAGgtcaTGCAa CTgcatcgAAcAtg CTa GAAGgtcaTGCAaA cgTGactTGGgTa cTaGgAaaTA cgTGactTGGgT ACTa gTCcaATCcCAGTG
+1,3,4,5,7,8
+> OK, next!
+ttcTtAtcaAAAAt GCgataaACctA ttcTtAtcaAA TctgCAta aATCgATCTctg AAtaATCgATC CAta
+1,3,4,5,6,7
+> OK, next!
+gcCgGtCAATaCcc gcCgGtCAAT AcGTCTAATgcg ctagGGcCTTcACg gaCg gcggaCg CATGtCAATA aCccAcGTCTAAT
+1,2,3,5,6,8
+> OK, next!
+gcCtTaGaaGTc gcCtTaGaaGTcT GtCtCGATGCtTc actTGaGtaGTtcGg GG gGG TactTGaGtaGTtcG
+1,2,4,5,6,7
+> OK, next!
+ggAAtgCcTcgTGtc CAGAaAGaTCgAT tGcGAtgaaTgg AAtgCcTcgTGtcag tGcGAtgaaT tCTAAgaaaaTA CGG agCGG
+1,3,4,5,7,8
+> OK, next!
+gaaaATaATtC TGtGGgaCTccGtG cTcGc AATAtgcgttA GtGcTcGc ATGtGGgaCTcc AAGcCCGtGaaTCA AATAtgcgtt aATaACAGcGt
+2,3,4,5,6,8
+> OK, next!
+TtcAtAGgtTTg CGaACGgGcTGaTT aTCaGgtTGaGCt tGA atGA caTCaGgtTGaGCta cGCaGAtATcggc cGCaGAtATcgg
+3,4,5,6,7,8
+> OK, next!
+GCaaGACTAGGtGT AccGTgcCATtc AccGTgcCATtcGC taTCgagaTTtGtA aAgAatcAAaaTcC aaGACTAGGtGTTt TCcTTAgAggg Ttag ggCTgacacGc ag
+1,2,3,6,8,10
+> OK, next!
+CTgGaTAAGaT ATGtTGgtAAtcta aGgacGCcGtct gtcaAcTCTT Tg cTg ATGtTGgtAAtct attAGtggCaAata ttAGtggCaAatac
+2,5,6,7,8,9
+> OK, next!
+CCa GCaCTcaaAgA caaCCa GgAtTgccGt gATCTGAtgagCAt CTGAtgagCAtcaa GgAtTgccGtgAT
+1,3,4,5,6,7
+> OK, next!
+GATgaCaACGgCTT GgCtCctctCCAtA AgacGTcCGaagG tAGATgaCaACGgCT GgCtCctctCCA gG ttCCcgtcTTaAGc TgG
+1,2,4,5,6,8
+> OK, next!
+GCgTTTCTTcAtgC aAAA TcaaGaTCGCgtAT CATgcGtGAat cAgtGaAAA tatgCcAttgA atgCcAttgAcAgtG CATgcGtGAa
+2,4,5,6,7,8
+> OK, next!
+ACcgggTCTccTC GAAgGtGAAcg GcAGgTTGggG TTtcgctGGg ataaGAAgGtGAAc gcTCGA cTCGA ttaCTtcCtgat CTTagGTctggCA TTtcgctGGgataa
+2,4,5,6,7,10
+> OK, next!
+GgGCaTgGtac atgacAggG TCgAcGggatgacAg taataCaAtC taataCaAtCCcT CcTTCgAcGgg AaTTcgCAcc gG
+2,3,4,5,6,8
+> OK, next!
+aAgAGTGgcTCTcg CGTgccaatT CaAgAGTGgcT ACaTccttTaA TcTCgcatGTT TcTCgcatGTTC GttCTCAgGAtTcg caGT CTcgcaGT
+1,3,5,6,8,9
+> OK, next!
+ATaATcGtGccCt AaCTCAaagc CCagT cTaTTGAtCtATa cTaTTGAtCt cCGGgTAtgatCGC ATcGtGccCtgG gGCCagT
+1,3,4,5,7,8
+> Congratulations, key is "The nitrogen in our DNA, the calcium in our teeth, the iron in our blood, the carbon in our apple pies were made in the interiors of collapsing stars. We are made of starstuff. - Carl Sagan"
+
+Phase SUBMIT
+> 20 cases, max 3 failures
+> Please, provide "TEST" or "SUBMIT"
+> Timeout lowered to 2500ms, Start!
+taaTatA Agagcctcg CCaagGt gTGtTA gCCGC tcgTAg TAg AgTGtTACa taaTat aTttttt CTCgTt GGgAgagcc aaAtCaGA TCGtTC CaGGg
+1,2,4,6,7,8,9,12,15
+> OK, next!
+GatttCgtc CGatgc cAtC GcCTCCaT ccccAtC CTTgt gtcGcCT gcGatttC gTGAaCGg gCCgaCat CCCAtC CGat CCaTccc CTaT Acac
+1,2,3,4,5,7,8,12,13
+> OK, next!
+TgCaaGgg AAgCTc GtgGtTGaG tGCTa gCaaGgg GGctTT CGTCTTcg gGtTGaGGC GGctTTGt tTTGTG GCtGCTaT cgAtCT ctctG aTAtAtt
+1,3,4,5,6,8,9,11
+> OK, next!
+gGctAgG GtagCgc TtGATGA gcgAGCCA ggTCCCCT tatgTgG ctAgGgcc tTGCC aTTcAT CCAtatgT gcagaT gcc TGAgcgAG TtGA
+1,3,4,6,7,10,12,13,14
+> OK, next!
+CaGCtat AGTgcc AcaGat gctGaAAT GgAaGgC GACTc gcaTa CaC CTcCaC tAGTgccGA GCtatt TgtTgcT gctGa AATCa
+1,2,4,6,8,9,10,11,13,14
+> OK, next!
+aagCa TAgaAT CAaCaTc AaGGcACC ATaa GTTTcTtc ctgCAtGa CaTcat TgCAAt atCACaGc CACaG AaGGc tgCAtGa ACCCAa
+3,4,7,8,10,11,12,13,14
+> OK, next!
+Ggccgcc cAcAg ccgccaGC GCacgc aTtG cAcAgGg AaGc AcCgTaTCc gatggCG TCcGCacgc cTTGGtC gttatGt agGCg aGCAcCgTa
+1,2,3,4,6,8,10,14
+> OK, next!
+GctCA TttCGtcTA cTttCGtc tatggc AAtgG CaGTCagA cGGgAc CcCcTC tatgg tcA caGTCCCc CcTCtcA ggtAA TAcaGTCC
+2,3,4,8,9,10,11,12,14
+> OK, next!
+ttggGGgC AGCCC tT caAGAtT AGtctaTA taTAcaAGA GGgCAGtc CTtcg TAcTTCt aTAAaCgG CcAAag Ctttgg AcCCG TAcTT
+1,3,4,5,6,7,9,12,14
+> OK, next!
+CttCtCGc aGTcg aTgGgA Tatgg TCcc AtgGGgc cGTgataT gGTgtG cGTgat gGgACttC tCGcGaC GaCAtgGG gACTttT gc
+1,3,6,7,9,10,11,12,14
+> OK, next!
+GggGtt TgACCgCTT CccT CgCTTctcc TTAga tctaCct taGaT ctcctT CccTTgAC gGATCG gaTcCCtc gAtTc aGaT AaAGa tTtctaCc
+2,3,4,6,7,8,9,13,15
+> OK, next!
+tTgGCGT tgTAtCt GCGTctt actTg cTcCcg ttTtTtATG AGGtGtAA gGAaTt TtATGgG TcGca gG TcGcaac cttAA AAttTt TGaTggt
+1,3,4,6,9,10,11,12,13,14
+> OK, next!
+GAGAT TaGaCCGc TCACca GAGATggg aGaCC GAccACtgC gggGAc tgGGc tGaTgtT TTTA Gc gGGcT cGGgG CAaGc cACtgCt
+1,2,4,5,6,7,8,11,12,15
+> Timeout, errors: 1
+> OK, next!
+gGcCgc tgtT CAGgg cGgCAGgg cgggcGg cATGgGcaa cGAACT gGacaTcg cGAA gGcaaggC CgttT CTcATG GACCaTCT ggCcggg
+3,4,5,6,7,9,10,12,14
+> OK, next!
+AGggtGcc taaCt ccGgGACa agCcagCA ag CgagCcagC aTccgaGC GgGACaCg cGcGCa tGtAgg cGcTgGtA gCGcag AgCGc gGTT AGggtG
+1,3,4,5,6,8,12,13,15
+> OK, next!
+cg cccttagt CcCGCT catGaG CcCGC GtGGaGa GAgTCTg AgTCT AtctAGT TgATA taGC gcTgg TacatGa cTggcg gATATa
+1,3,4,5,7,8,10,12,13,14,15
+> OK, next!
+aCAGCtA tCcTatCG tcggagaG gggGAC GACactcg CTgAG cgcCT cAACc actcgT gaCAG tGcGcTTC cgcCTg CtAggg TcAACc
+1,4,5,7,8,9,10,12,13,14
+> OK, next!
+ac GcTAgCTG GAagg ttGAT tTtac ttCcgT gAaTGAG TTgcG cacgACAC aTGAGcacg TTgcGgA CTGgCAgC ACACttG ATtTt
+1,4,5,7,8,9,10,11,13,14
+> OK, next!
+AaTaGaCgc CGctGCG tCctga ACTATgtC cta gccta ACTA ctTcca cTCAa TgtCCGctG AaCA TaGaC cAAc CGcTC
+1,2,4,5,6,7,9,10,12,14
+> OK, next!
+aagCa TAgaAT CAaCaTc AaGGcACC ATaa GTTTcTtc ctgCAtGa CaTcat TgCAAt atCACaGc CACaG AaGGc tgCAtGa ACCCAa
+3,4,7,8,10,11,12,13,14
+> Congratulations, key is "We are just an advanced breed of monkeys on a minor planet of a very average star. But we can understand the Universe. That makes us something very special. - Stephen Hawking"
+~/Ramon/projects/2018-04-27-Tuenti-Challenge

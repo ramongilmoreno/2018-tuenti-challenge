@@ -1,0 +1,6 @@
+scala-*/
+.idea/
+*.iml
+out/
+solutions/
+*.swp

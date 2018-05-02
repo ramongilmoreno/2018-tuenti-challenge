@@ -1,0 +1,12 @@
+Code for the Tuenti Challenge 2018
+2018-05-02-1658
+ramongimoreno@gmail.com
+
+https://contest.tuenti.net
+
+Challenges 1 to 5 out of 15
+
+Built with IntelliJ and Scala 2.12.5 (scala-2.12.5 folder was put in the base
+directory and was used by ./test.sh script; compiled classes were found in
+the out/production/.../*.class as genereted by IntelliJ IDE).
+
