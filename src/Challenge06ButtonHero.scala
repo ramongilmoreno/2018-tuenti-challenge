@@ -62,6 +62,20 @@ object Challenge06ButtonHero {
           otherUps
       }
 
+      // Filter ups: retain current ups and max ups
+      val (nowUps, oldUps) = nextUps.partition(_.up == time)
+      var oldUpsMax = Int.MinValue
+      if (oldUps.isEmpty)
+        nextUps = nowUps
+      else {
+        val max = oldUps.maxBy(_.score)
+        oldUpsMax = max.score
+        nextUps = nowUps + max
+      }
+
+      // Clean empty downs
+      nextDowns = nextDowns.filter(!_.pending.isEmpty)
+
       solve(nextDowns, nextUps, events.tail)
     }
   }
