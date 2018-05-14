@@ -28,57 +28,41 @@ object Challenge06ButtonHero {
   def start (note: Note): Float = note.start.toFloat / note.speed
   def end (note: Note): Float = (note.start + note.length).toFloat / note.speed
 
-  def solve(lastTime: Float, statuses: Set[Status], events: mutable.SortedSet[Event]): Set[Status] = {
-    // Filter empty downs and old ups
-    var (filteredDown, filteredUp) = statuses.partition(_.isInstanceOf[Down])
-    filteredDown = filteredDown.filter(_ match {
-      case s: Down if s.pending.isEmpty => false
-      case _ => true
-    })
-    var (lastUps, oldUps) = filteredUp.partition(_ match {
-      // Filter empty up
-      case s: Up if (s.up == lastTime) => true
-      case _ => false
-    })
-    if (oldUps.nonEmpty) {
-      oldUps = Set(oldUps.maxBy(_.score))
-    }
-
-    // Proceed
-    val statuses2 = filteredDown ++ (lastUps ++ oldUps)
+  def solve(downs: Set[Down], ups: Set[Up], events: mutable.SortedSet[Event]): Int = {
     if (events.isEmpty) {
-      statuses2
+      (downs ++ ups).maxBy(_.score).score
     } else {
       val event = events.head
-      solve(event.time,
-        if (event.start) {
-          // In the case of start, either join other button down at the same time
-          // or convert previous button up in down
-          var (downs, ups) = statuses2.partition(_.isInstanceOf[Down])
-          if (!downs.exists(_.down == start(event.note))) {
-            downs = downs + Down(event.time, 0, Set(event.note))
-          } else {
-            downs = downs.map(_ match {
-              case x: Down if (x.down == event.start) => Down(x.down, x.score, x.pending + event.note)
-              case x => x
-            })
-          }
+      val note = event.note
+      val time = event.time
+      var nextDowns: Set[Down] = downs
+      var nextUps: Set[Up] = ups
 
-          ups = ups.flatMap(_ match {
-            case x: Up if (x.up < event.time) => Set[Status](x, Down(event.time, x.score, Set(event.note)))
-            case x => Set[Status](x)
-          })
-          ups ++ downs
-        } else {
-          // Collect points on all started status
-          statuses2.flatMap(_ match {
-            case s: Down if (s.down == start(event.note)) => Set[Status](Down(s.down, s.score, s.pending - event.note), Up(s.down, event.time, s.score + event.note.points))
-            case s: Up if ((s.down == start(event.note)) && (s.up == end(event.note))) => Set[Status](Up(s.down, s.up, s.score + event.note.points))
-            case s => Set(s)
-          })
-        },
-        events.tail
-      )
+      if (event.start) {
+        nextDowns = downs.map(_ match {
+          case d if (d.down == time) => Down(d.down, d.score, d.pending + note)
+          case d => d
+        })
+        nextDowns = nextDowns ++ ups.filter(_.up < time).map(u => Down(time, u.score, Set(note)))
+      } else {
+        // Compute downs
+        val (candidateDowns, otherDowns) = downs.partition(_ match {
+          case d if (d.down == start(note)) => true
+          case _ => false
+        })
+        nextDowns = candidateDowns.map(d => Down(d.down, d.score, d.pending - note)) ++ otherDowns
+
+        // Sum scores for ups
+        val (candidateUps, otherUps) = ups.partition(_ match {
+          case u if (u.down == start(note) && u.up == end(note)) => true
+          case _ => false
+        })
+        nextUps = candidateDowns.map(d => Up(d.down, time, d.score + note.points)) ++
+          candidateUps.map(u => Up(u.down, time, u.score + note.points)) ++
+          otherUps
+      }
+
+      solve(nextDowns, nextUps, events.tail)
     }
   }
 
@@ -92,7 +76,7 @@ object Challenge06ButtonHero {
         events += Event(note, false, end(note))
         scanner.nextLine
       }
-      val solution = solve(-1, Set(Up(-1, -1, 0)), events).map(_.score).max
+      val solution = solve(Set.empty, Set(Up(-1, -1, 0)), events)
       println(s"Case #${i}: ${solution}")
     }
   }
