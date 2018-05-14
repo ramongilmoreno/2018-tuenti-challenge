@@ -64,17 +64,19 @@ object Challenge06ButtonHero {
 
       // Filter ups: retain current ups and max ups
       val (nowUps, oldUps) = nextUps.partition(_.up == time)
-      var oldUpsMax = Int.MinValue
       if (oldUps.isEmpty)
         nextUps = nowUps
-      else {
-        val max = oldUps.maxBy(_.score)
-        oldUpsMax = max.score
-        nextUps = nowUps + max
-      }
+      else
+        nextUps = nowUps + oldUps.maxBy(_.score)
 
       // Clean empty downs
-      nextDowns = nextDowns.filter(!_.pending.isEmpty)
+      nextDowns = nextDowns.filter(_.pending.nonEmpty)
+
+      // Discard unpromising button down
+      val max = nowUps.map(_.score).foldLeft(Int.MinValue)(Math.max(_, _))
+      nextDowns = nextDowns.filter(d => {
+        d.down == time || d.pending.groupBy(end(_)).map(_._2.map(_.points).sum).foldLeft(d.score)(_ + _) >= max
+      })
 
       solve(nextDowns, nextUps, events.tail)
     }
