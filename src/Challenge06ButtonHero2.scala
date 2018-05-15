@@ -2,8 +2,7 @@ import java.util.Scanner
 
 import scala.collection.mutable
 
-
-object Challenge06ButtonHero {
+object Challenge06ButtonHero2 {
 
   case class Note (id: Int, start: Int, length: Int, speed: Int, points: Int)
 
