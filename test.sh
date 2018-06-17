@@ -21,4 +21,5 @@ do
         scala $i < $DATA_DIR/$j | tee $SOLUTION_DIR/$j
     done
     popd
+    exit -1
 done

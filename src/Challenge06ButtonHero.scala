@@ -21,16 +21,16 @@ object Challenge06ButtonHero {
     }
   }
 
-  trait Status { def down: Float; def score: Int }
-  case class Down (down: Float, score: Int, pending: Set[Note]) extends Status
-  case class Up (down: Float, up: Float, score: Int) extends Status
+  trait Status { def down: Float; def score: Int; def nature: Boolean }
+  case class Down (down: Float, score: Int, pending: Set[Note], nature: Boolean = true) extends Status
+  case class Up (down: Float, up: Float, score: Int, nature: Boolean = false) extends Status
 
   def start (note: Note): Float = note.start.toFloat / note.speed
   def end (note: Note): Float = (note.start + note.length).toFloat / note.speed
 
   def solve(downs: Set[Down], ups: Set[Up], events: mutable.SortedSet[Event]): Int = {
     if (events.isEmpty) {
-      (downs ++ ups).maxBy(_.score).score
+      ups.maxBy(_.score).score
     } else {
       val event = events.head
       val note = event.note
@@ -43,18 +43,19 @@ object Challenge06ButtonHero {
           case d if (d.down == time) => Down(d.down, d.score, d.pending + note)
           case d => d
         })
-        nextDowns = nextDowns ++ ups.filter(_.up < time).map(u => Down(time, u.score, Set(note)))
+        nextDowns = nextDowns ++ ups.filter(_.up <= time).map(u => Down(time, u.score, Set(note)))
       } else {
         // Compute downs
+        val strt = start(note)
         val (candidateDowns, otherDowns) = downs.partition(_ match {
-          case d if (d.down == start(note)) => true
+          case d if (d.pending.contains(note)) => true
           case _ => false
         })
         nextDowns = candidateDowns.map(d => Down(d.down, d.score, d.pending - note)) ++ otherDowns
 
         // Sum scores for ups
         val (candidateUps, otherUps) = ups.partition(_ match {
-          case u if (u.down == start(note) && u.up == end(note)) => true
+          case u if (u.down == strt && u.up == time) => true
           case _ => false
         })
         nextUps = candidateDowns.map(d => Up(d.down, time, d.score + note.points)) ++
@@ -63,7 +64,7 @@ object Challenge06ButtonHero {
       }
 
       // Filter ups: retain current ups and max ups
-      val (nowUps, oldUps) = nextUps.partition(_.up == time)
+      val (nowUps, oldUps) = nextUps.partition(time == _.up)
       if (oldUps.isEmpty)
         nextUps = nowUps
       else
@@ -92,6 +93,7 @@ object Challenge06ButtonHero {
         events += Event(note, false, end(note))
         scanner.nextLine
       }
+      // val solution = if (i < 80 || i > 90) solve(Set.empty, Set(Up(-2, -1, 0)), events) else 0
       val solution = solve(Set.empty, Set(Up(-1, -1, 0)), events)
       println(s"Case #${i}: ${solution}")
     }
